@@ -1,6 +1,5 @@
 
 public class Calculate {
-	// Part 1
 	public static int square (int number){
 		return (number*number);
 	}
@@ -30,26 +29,5 @@ public class Calculate {
 	}
 	public static String foil (int a, int b, int c, int d, char x){
 		return (""+a*c*x+"^2+"+((b+d)*x)+"+"+b*d+"");
-	}
-	// Part 2
-	public static boolean isDivisibleBy (int a, int b){
-		if (a%b==0){
-			return true;
-		}
-		else{
-			return false;
-		}
-	public static boolean absValue (double a){
-		if (a<=0){
-			return -1*a;
-		}
-		else{
-			return a;
-		}
-	}
-	public static int max (int a, int b){
-	}
-	
-		
 	}
 }
