@@ -83,6 +83,19 @@ public class Calculate {
 		}
 	}
 	public static double round2 (double a){
-		return 
+		double times100 = a*100;
+		int number = (int)(times100);
+		double subtracted = times100-number;
+		
+		if (subtracted >= 0.5){
+			return (++number/100.0);
+		}
+		else{
+			return (number/100.0);
+		}
+	}
+	//Part 3
+	public static double exponent (double a, int b){
+		return a(a);
 	}
 }
