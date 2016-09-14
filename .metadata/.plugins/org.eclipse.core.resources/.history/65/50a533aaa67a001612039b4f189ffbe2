@@ -1,0 +1,6 @@
+
+public class DoMath {
+	public static void main (String[]args) {
+		Calculate.isDivisibleBy(13, 13);
+	}
+}
