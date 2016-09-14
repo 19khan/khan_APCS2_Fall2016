@@ -95,7 +95,37 @@ public class Calculate {
 		}
 	}
 	//Part 3
-	public static double exponent (double a, int b){
-		return a(a);
+	public static double exponent (double base, int exponent){
+		double answer = base;
+		int loopVar = exponent;
+		for (int i = 1;i < loopVar ; i++){
+			answer = answer * base;
+		}
+		System.out.println(answer);
+		return answer;
+	}
+	
+	public static int factorial (int a){
+		int answer = a;
+		int loopVar = a;
+		for (int i = 1; i < loopVar; i++){
+			answer = answer * i;
+		}
+		System.out.println(answer);
+		return answer;
+
+	}
+	public static boolean isPrime (int input){
+		int loopVar = input;
+		for (;loopVar > 0; loopVar--){
+			Calculate.isDivisibleBy(loopVar, );
+		}
+		return true;
+	}
+	public static int gcf (int a, int b){
+		Calculate.max(a, b);
+	}
+	public static double sqrt (double a){
+		
 	}
 }
