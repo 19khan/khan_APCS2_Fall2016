@@ -46,6 +46,9 @@ public class Calculate {
 		if (a%b==0){
 			return true;
 		}
+		if (b==0){
+			throw new IllegalArgumentException ("Demoninator cannot be 0");
+		}
 		else{
 			return false;
 		}
@@ -98,8 +101,13 @@ public class Calculate {
 	public static double exponent (double base, int exponent){
 		double answer = base;
 		int loopVar = exponent;
-		for (int i = 1;i < loopVar ; i++){
-			answer = answer * base;
+		if (exponent < 0){
+			throw new IllegalArgumentException ("Exponent cannot be less than 0");
+		}
+		else{
+			for (int i = 1;i < loopVar ; i++){
+				answer = answer * base;
+			}
 		}
 		return answer;
 	}
@@ -107,8 +115,13 @@ public class Calculate {
 	public static int factorial (int a){
 		int answer = a;
 		int loopVar = a;
-		for (int i = 1; i < loopVar; i++){
-			answer = answer * i;
+		if(a>0){
+			throw new IllegalArgumentException ("Input cannot be less than zero.");
+		}
+		else{
+			for (int i = 1; i < loopVar; i++){
+				answer = answer * i;
+			}
 		}
 		return answer;
 
@@ -124,46 +137,31 @@ public class Calculate {
 		}
 		return true;
 	}
-
+	/*
 	public static int gcf (int a, int b){
 		int output = 1;
-		int bigNum = Calculate.max(a, b);
-		if (a=bigNum){
+		int bigNum = (Calculate.max(a, b));
+		if (a == bigNum){
 			for (int i = a; i>= 1; i--){
 				if (a%i == 0 && b%i ==0){
 					return i;
-			}
-		}
-		if (b=bigNum){
-			for (int j = smallNum; j>= 1; j--){
-				if (a%j == 0 && b%j == 0){
-					return j;
-			}
-		}
-		return output;
-		}
-	}
-	}
-		/*int output = 1;
-		if (a >b){
-			for (int i = b; i >= 1; i--){
-				if (a%i == 0 && b%i == 0){
-					return i;
 				}
 			}
 		}
-		else{
-			for (int j = a; j>= 1; j--){
+		if (b == bigNum){
+			for (int j = b; j>= 1; j--){
 				if (a%j == 0 && b%j == 0){
 					return j;
 				}
 			}
+			return output;
 		}
-		return output;		
 	}
 	
-	public static double sqrt (double a){
+	public static double sqrt (int input){
 		
 	}
-}/*
+	*/
+}	
+	
 
