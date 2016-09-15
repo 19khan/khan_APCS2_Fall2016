@@ -101,7 +101,6 @@ public class Calculate {
 		for (int i = 1;i < loopVar ; i++){
 			answer = answer * base;
 		}
-		System.out.println(answer);
 		return answer;
 	}
 	
@@ -111,21 +110,60 @@ public class Calculate {
 		for (int i = 1; i < loopVar; i++){
 			answer = answer * i;
 		}
-		System.out.println(answer);
 		return answer;
 
 	}
+	
 	public static boolean isPrime (int input){
-		int loopVar = input;
-		for (;loopVar > 0; loopVar--){
-			Calculate.isDivisibleBy(loopVar, );
+		boolean check;
+		for (int i = 1; i>input-1; i--){
+			check = (Calculate.isDivisibleBy(input, i));
+			if (check == true){
+				return false;
+			}
 		}
 		return true;
 	}
+
 	public static int gcf (int a, int b){
-		Calculate.max(a, b);
+		int output = 1;
+		int bigNum = Calculate.max(a, b);
+		if (a=bigNum){
+			for (int i = a; i>= 1; i--){
+				if (a%i == 0 && b%i ==0){
+					return i;
+			}
+		}
+		if (b=bigNum){
+			for (int j = smallNum; j>= 1; j--){
+				if (a%j == 0 && b%j == 0){
+					return j;
+			}
+		}
+		return output;
+		}
 	}
+	}
+		/*int output = 1;
+		if (a >b){
+			for (int i = b; i >= 1; i--){
+				if (a%i == 0 && b%i == 0){
+					return i;
+				}
+			}
+		}
+		else{
+			for (int j = a; j>= 1; j--){
+				if (a%j == 0 && b%j == 0){
+					return j;
+				}
+			}
+		}
+		return output;		
+	}
+	
 	public static double sqrt (double a){
 		
 	}
-}
+}/*
+
