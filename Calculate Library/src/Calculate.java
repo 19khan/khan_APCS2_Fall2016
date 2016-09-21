@@ -43,11 +43,11 @@ public class Calculate {
 	}
 	// Part 2
 	public static boolean isDivisibleBy (int a, int b){
-		if (a%b==0){
-			return true;
-		}
 		if (b==0){
 			throw new IllegalArgumentException ("Demoninator cannot be 0");
+		}
+		if (a%b==0){
+			return true;
 		}
 		else{
 			return false;
@@ -115,7 +115,7 @@ public class Calculate {
 	public static int factorial (int a){
 		int answer = a;
 		int loopVar = a;
-		if(a>0){
+		if(a<0){
 			throw new IllegalArgumentException ("Input cannot be less than zero.");
 		}
 		else{
@@ -128,40 +128,30 @@ public class Calculate {
 	}
 	
 	public static boolean isPrime (int input){
-		boolean check;
+		boolean answer;
+		boolean check ;
 		for (int i = 1; i>input-1; i--){
 			check = (Calculate.isDivisibleBy(input, i));
 			if (check == true){
-				return false;
+				answer = false;
+			}
+			else{
+				answer = true;
 			}
 		}
-		return true;
+		return answer;
 	}
-	/*
+
 	public static int gcf (int a, int b){
-		int output = 1;
+		int output;
 		int bigNum = (Calculate.max(a, b));
-		if (a == bigNum){
-			for (int i = a; i>= 1; i--){
-				if (a%i == 0 && b%i ==0){
-					return i;
-				}
+		for (int i = bigNum; i>= 1; i--){
+			if (a%i == 0 && b%i ==0){
+				output = i;
 			}
 		}
-		if (b == bigNum){
-			for (int j = b; j>= 1; j--){
-				if (a%j == 0 && b%j == 0){
-					return j;
-				}
-			}
-			return output;
-		}
+		return output;
 	}
-	
-	public static double sqrt (int input){
-		
-	}
-	*/
 }	
 	
 
