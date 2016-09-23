@@ -44,7 +44,7 @@ public class Calculate {
 	// Part 2
 	public static boolean isDivisibleBy (int a, int b){
 		if (b==0){
-			throw new IllegalArgumentException ("Demoninator cannot be 0");
+			throw new IllegalArgumentException ("Cannot divide by 0");
 		}
 		if (a%b==0){
 			return true;
@@ -128,11 +128,9 @@ public class Calculate {
 	}
 	
 	public static boolean isPrime (int input){
-		boolean answer;
-		boolean check ;
-		for (int i = 1; i>input-1; i--){
-			check = (Calculate.isDivisibleBy(input, i));
-			if (check == true){
+		boolean answer = false;
+		for (int i = 1; i<input-1; i++){
+			if ((Calculate.isDivisibleBy(input, i)) == true){
 				answer = false;
 			}
 			else{
@@ -141,7 +139,8 @@ public class Calculate {
 		}
 		return answer;
 	}
-
+}
+/*
 	public static int gcf (int a, int b){
 		int output;
 		int bigNum = (Calculate.max(a, b));
@@ -149,9 +148,12 @@ public class Calculate {
 			if (a%i == 0 && b%i ==0){
 				output = i;
 			}
+			else{
+				return bigNum;
+			}
 		}
 		return output;
 	}
-}	
+}	*/
 	
 
