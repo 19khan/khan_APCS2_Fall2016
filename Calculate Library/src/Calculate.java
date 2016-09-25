@@ -1,4 +1,5 @@
 
+// Kevin Han APCS2
 public class Calculate {
 	// Part 1
 	public static int square (int number){
@@ -139,21 +140,49 @@ public class Calculate {
 		}
 		return answer;
 	}
-}
-/*
+
 	public static int gcf (int a, int b){
-		int output;
-		int bigNum = (Calculate.max(a, b));
-		for (int i = bigNum; i>= 1; i--){
-			if (a%i == 0 && b%i ==0){
-				output = i;
-			}
-			else{
-				return bigNum;
+		int gcf = 1;
+		int smallNum = (Calculate.min(a, b));
+		for (int i = 2; i < smallNum; i++){
+			if (Calculate.isDivisibleBy(a, i) && Calculate.isDivisibleBy(b,i)){
+			gcf = i;
 			}
 		}
-		return output;
+		return gcf;
 	}
-}	*/
-	
+
+	public static double sqrt (double num) {
+		if (num < 0){
+			throw new IllegalArgumentException ("Input cannot be negative.");
+		}
+		double x = 1;
+		while (x*x > (num + .1) || x*x < (num - .1)){
+			while (x*x > num) {
+				x = x + .01;
+			}
+			if (x*x > num){
+				x = x - .01;
+			}
+		}
+		return (Calculate.round2 (x));
+	}
+				
+	public static String quadForm (int num1, int num2, int num3){
+		String answer = "";
+		double discrim = Calculate.discriminant(num1, num2, num3);
+		if (discrim < 0){
+			return ("No real roots.");
+		}
+		double answer1 = ((-num2) + Calculate.sqrt(discrim)) / (2*num1);
+		double answer2 = ((-num2) - Calculate.sqrt(discrim)) / (2*num1);
+		if (answer1 == answer2){
+			answer += answer1;
+			return (answer);
+		}else{
+			answer = "\"" + Calculate.round2(answer1) + " and " + Calculate.round2(answer2) + "\"";
+			return (answer);
+		}
+	}
+}
 
