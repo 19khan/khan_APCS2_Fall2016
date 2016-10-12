@@ -27,22 +27,19 @@ public class Magpie3 {
 		
 		// Paste part 2 code here	
 		String response = "";
-		if (findKeyword(statement, "mother", 0) >= 0
-				|| findKeyword(statement, "father", 0) >= 0
-				|| findKeyword(statement, "sister",0) >= 0){
+		if (statement.indexOf("no") >= 0) {
+			response = "Don't be so negative";
+		} else if (statement.indexOf("mother") >= 0
+				|| statement.indexOf("father") >= 0
+				|| statement.indexOf("sister") >= 0) {
 			response = "Tell me more about your family.";
-		} else if (findKeyword (statement, "no", 0) >=0){
-			response = "Why are you so negative?";
-		} else if (findKeyword (statement, "brother", 0) >= 0) {
+		} else if (statement.indexOf ("brother") >= 0) {
 			response = ("How old is he?");
-		} else if (findKeyword (statement, "Mr.Lamont", 0) >= 0
-				|| findKeyword (statement, "Mr.deHeer", 0) >= 0) {
+		} else if (statement.indexOf ("Mr.Millstein") >=0) {
 			response = "He sounds like a good teacher.";
-		} else if (findKeyword (statement, "Ms.Dreyer", 0) >= 0){
-			response = "She sounds like a good teacher.";
-		} else if (findKeyword (statement, "How are you?", 0) >= 0){
+		} else if (statement.indexOf ("How are you") >= 0){
 			response = "I'm doing fine";
-		} else if (findKeyword (statement, "Where are you from?", 0) >= 0){
+		} else if (statement.indexOf ("Where are you") >= 0){
 			response = "I'm from California";
 		} else if (statement.trim().length() <= 0){
 			response = "Say something, please.";
