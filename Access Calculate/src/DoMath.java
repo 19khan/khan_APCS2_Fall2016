@@ -1,7 +1,6 @@
 
 public class DoMath {
 	public static void main (String[]args) {
-		System.out.println(Calculate.isDivisibleBy(10, 6));
-		System.out.println(Calculate.isPrime(15));
+		System.out.println(Calculate.toRadians(-180));
 	}
 }

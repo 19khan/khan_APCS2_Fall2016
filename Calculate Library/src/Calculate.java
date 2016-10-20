@@ -23,7 +23,7 @@ public class Calculate {
 	
 	}
 	public static double toRadians (double degrees){
-		return (degrees * 180)/3.14159;
+		return (degrees/180)*3.14159;
 	
 	}
 	public static double discriminant (double a, double b, double c){
