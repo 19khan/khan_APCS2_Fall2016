@@ -12,12 +12,11 @@ public class Hourglass {
 			width = userInput.nextInt();
 		}
 	}
-	
 		printBase(width);
 		topHalf(width);
 		middle(width);
 		bottomHalf(width);
-		printBase(width);
+		printBase(width);		
 	}
 	
 	public static void topHalf(int width){

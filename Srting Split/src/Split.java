@@ -1,9 +1,25 @@
+import java.util.Arrays;
+import java.util.*;
+public class Split {
 
-public class Split 
-{
+	public static void main(String[] args){ 
+		System.out.println("Give ingredients to sandwich.");
+		//Set up scanner. Ask for ingredients.
+		Scanner userInput = new Scanner (System.in);
+		String sandwichIngredients = userInput.next();
+		//Establish array and set its content to new .split.
+		String [] sandwichArray = sandwichIngredients.split("bread");
+		
+		if (sandwichIngredients.indexOf("bread") == 2){
+			System.out.println (sandwichArray[1]);
+		}
+		else if (sandwichIngredients.indexOf("bread") == 3){
+			System.out.print(sandwichArray[1]);
+			System.out.print(sandwichArray[2]);
+		}
+	}
+}
 
-	public static void main(String[] args) 
-	{
 		//String.split();
 		//It's a method that acts on a string, <StringName>.split(<String sp>);
 		//Where sp is the string where the string splits
@@ -31,6 +47,4 @@ public class Split
 
 		
 
-	}
 
-}
