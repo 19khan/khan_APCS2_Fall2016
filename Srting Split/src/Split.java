@@ -10,13 +10,16 @@ public class Split {
 		//Establish array and set its content to new .split.
 		String [] sandwichArray = sandwichIngredients.split("bread");
 		
-		if (sandwichIngredients.indexOf("bread") == 2){
-			System.out.println (sandwichArray[1]);
+		for (int i = 0; i < sandwichArray.length-1; i++){
+			System.out.print(sandwichArray[i+1]);
 		}
-		else if (sandwichIngredients.indexOf("bread") == 3){
+		
+		/*if (sandwichArray.length >= 2){
 			System.out.print(sandwichArray[1]);
-			System.out.print(sandwichArray[2]);
+			System.out.println(sandwichArray[2]);
 		}
+		if (sandwichArray.length == 2)
+		System.out.println (sandwichArray[1]);*/
 	}
 }
 
