@@ -3,7 +3,7 @@ import java.util.*;
 public class Split {
 
 	public static void main(String[] args){ 
-		System.out.println("Give ingredients to sandwich. ex)Ingredient1BreadIngredient2Ingredient3Ingredient4BreadIngredient50");
+		System.out.println("Give ingredients to sandwich.");
 		//Set up scanner. Ask for ingredients.
 		Scanner userInput = new Scanner (System.in);
 		String sandwichIngredients = userInput.next();

@@ -3,19 +3,24 @@ import java.util.*;
 public class Split {
 
 	public static void main(String[] args){ 
-		System.out.println("Give ingredients to sandwich. ex)Ingredient1BreadIngredient2Ingredient3Ingredient4BreadIngredient50");
+		System.out.println("Give ingredients to sandwich.");
 		//Set up scanner. Ask for ingredients.
 		Scanner userInput = new Scanner (System.in);
 		String sandwichIngredients = userInput.next();
 		//Establish array and set its content to new .split.
 		String [] sandwichArray = sandwichIngredients.split("bread");
 		
-		//for loop counting up to length of array - 2 since last index is not needed.
-		//int i starts from 0 because of 0 base indexing.
-		for (int i = 0; i < sandwichArray.length-2; i++){
-			//add 1 to i since sandwichArray[0] is unneeded
-			System.out.print(sandwichArray[i+1]);
+		//for loop counting up to length of array - 2 since last 
+		for (int i = 0; i < sandwichArray.length-1; i++){
+			System.out.print(sandwichArray[i]);
 		}
+		
+		/*if (sandwichArray.length >= 2){
+			System.out.print(sandwichArray[1]);
+			System.out.println(sandwichArray[2]);
+		}
+		if (sandwichArray.length == 2)
+		System.out.println (sandwichArray[1]);*/
 	}
 }
 
