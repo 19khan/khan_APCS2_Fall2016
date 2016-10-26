@@ -15,8 +15,9 @@ public class Split {
 		
 		if (sandwichIngredients.indexOf("bread") == -1){
 			System.out.println("Your sandwich has no bread.");
-		}if (sandwichArray.length < 1
-			|| sandwichArray.length == 1){
+		}if (sandwichArray.length == 2){
+			System.out.println(sandwichArray[1]);
+		}if (sandwichArray.length < 1){
 			System.out.println("This is not a sandwich.");
 		}
 

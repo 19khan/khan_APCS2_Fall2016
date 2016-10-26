@@ -14,10 +14,12 @@ public class Split {
 		System.out.println(Arrays.toString(sandwichArray));
 		
 		if (sandwichIngredients.indexOf("bread") == -1){
-			System.out.println("Your sandwich has no bread.");
-		}if (sandwichArray.length < 1
-			|| sandwichArray.length == 1){
-			System.out.println("This is not a sandwich.");
+			System.out.println("Your sandwich is not a sandwich.");
+		}
+		
+		if (sandwichArray[0] == null
+				||sandwichArray[sandwichArray.length-1] == null){
+			System.out.println(sandwichArray[sandwichArray.length-1]);
 		}
 
 		else{

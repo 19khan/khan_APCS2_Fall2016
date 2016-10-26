@@ -13,10 +13,17 @@ public class Split {
 		
 		System.out.println(Arrays.toString(sandwichArray));
 		
+		int breadCount = 0;
+		for (int i = 0; i > sandwichIngredients.length(); i++){
+			if (sandwichIngredients.contains("bread"))
+				breadCount++;
+		}
+		
+		System.out.println(breadCount);
 		if (sandwichIngredients.indexOf("bread") == -1){
 			System.out.println("Your sandwich has no bread.");
 		}if (sandwichArray.length < 1
-			|| sandwichArray.length == 1){
+			|| breadCount == 1){
 			System.out.println("This is not a sandwich.");
 		}
 

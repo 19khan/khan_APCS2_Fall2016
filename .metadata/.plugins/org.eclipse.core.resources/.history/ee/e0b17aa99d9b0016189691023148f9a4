@@ -8,25 +8,20 @@ public class Split {
 		//Set up scanner. Ask for ingredients.
 		Scanner userInput = new Scanner (System.in);
 		String sandwichIngredients = userInput.next();
-		//Establish array and set its content to .split array.
-		String [] sandwichArray = sandwichIngredients.split("bread");
-		
-		System.out.println(Arrays.toString(sandwichArray));
 		
 		if (sandwichIngredients.indexOf("bread") == -1){
 			System.out.println("Your sandwich has no bread.");
-		}if (sandwichArray.length < 1
-			|| sandwichArray.length == 1){
-			System.out.println("This is not a sandwich.");
 		}
 
-		else{
-			//for loop counting up to length of array - 2 since last index is not needed.
-			//int i starts from 0 because of 0 base indexing.
-			for (int i = 0; i < sandwichArray.length-2; i++){
-				//add 1 to i since sandwichArray[0] is unneeded
-				System.out.print(sandwichArray[i+1]);
-			}
+		//Establish array and set its content to new .split
+		String [] sandwichArray = sandwichIngredients.split("bread");
+
+		//for loop counting up to length of array - 2 since last index is not needed.
+		//int i starts from 0 because of 0 base indexing.
+		System.out.print("Ingredients:  ");
+		for (int i = 0; i < sandwichArray.length-2; i++){
+			//add 1 to i since sandwichArray[0] is unneeded
+			System.out.print(sandwichArray[i+1]);
 		}
 	}
 }
