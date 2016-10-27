@@ -4,7 +4,7 @@ public class Split {
 	//array.lenght has to be greater than 3.
 
 	public static void main(String[] args){ 
-		System.out.println("Give ingredients to sandwich.");
+		System.out.println("Give ingredients to sandwich. ex)Ingredient1BreadIngredient2Ingredient3Ingredient4BreadIngredient50");
 		//Set up scanner. Ask for ingredients.
 		Scanner userInput = new Scanner (System.in);
 		String sandwichIngredients = userInput.next();
@@ -13,18 +13,14 @@ public class Split {
 		
 		System.out.println(Arrays.toString(sandwichArray));
 		
-		checkSandwich(sandwichIngredients, sandwichArray);
-	}
-	
-	public static void checkSandwich(String ingredients, String [] sandwichArray){
-		//when the sandwich isn't a sandwich.
-		if (sandwichArray.length <= 1
-			|| ingredients.indexOf("bread") == -1){
+		if (sandwichIngredients.indexOf("bread") == -1){
+			System.out.println("Your sandwich has no bread.");
+		}if (sandwichArray.length < 1
+			|| sandwichArray.length == 1){
 			System.out.println("This is not a sandwich.");
-		}else if (ingredients.endsWith("bread") == true
-				&& ingredients.indexOf("bread") >= 0){
-			System.out.println(sandwichArray[sandwichArray.length -1]);	
-		}else{
+		}
+
+		else{
 			//for loop counting up to length of array - 2 since last index is not needed.
 			//int i starts from 0 because of 0 base indexing.
 			for (int i = 0; i < sandwichArray.length-2; i++){

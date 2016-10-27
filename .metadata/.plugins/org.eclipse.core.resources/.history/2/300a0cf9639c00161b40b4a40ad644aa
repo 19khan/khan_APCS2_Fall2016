@@ -13,17 +13,16 @@ public class Split {
 		
 		System.out.println(Arrays.toString(sandwichArray));
 		
-		checkSandwich(sandwichIngredients, sandwichArray);
-	}
-	
-	public static void checkSandwich(String ingredients, String [] sandwichArray){
 		//when the sandwich isn't a sandwich.
 		if (sandwichArray.length <= 1
-			|| ingredients.indexOf("bread") == -1){
+			|| sandwichIngredients.indexOf("bread") == -1){
 			System.out.println("This is not a sandwich.");
-		}else if (ingredients.endsWith("bread") == true
-				&& ingredients.indexOf("bread") >= 0){
+		}else if (sandwichIngredients.endsWith("bread") == true
+				&& sandwichIngredients.indexOf("bread") > 0){
 			System.out.println(sandwichArray[sandwichArray.length -1]);	
+		}else if (sandwichIngredients.indexOf("bread") > 0
+				&& sandwichIngredients.endsWith("bread") == false){
+			System.out.println("This is not a sandwich.");
 		}else{
 			//for loop counting up to length of array - 2 since last index is not needed.
 			//int i starts from 0 because of 0 base indexing.
