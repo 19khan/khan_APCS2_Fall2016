@@ -13,25 +13,35 @@ public class Split {
 		
 		System.out.println(Arrays.toString(sandwichArray));
 		
-		checkSandwich(sandwichIngredients, sandwichArray);
+		boolean check = checkSandwich(sandwichIngredients, sandwichArray);
+		if (check = false){
+			giveIngredients(sandwichArray);
+		}
 	}
 	
-	public static void checkSandwich(String ingredients, String [] sandwichArray){
+	public static boolean checkSandwich (String ingredients, String [] sandwichArray){
 		//when the sandwich isn't a sandwich.
 		if (sandwichArray.length <= 1
 			|| ingredients.indexOf("bread") == -1){
-			System.out.println("This is not a sandwich.");
-		}else if (ingredients.endsWith("bread") == true
-				&& ingredients.indexOf("bread") >= 0){
-			System.out.println(sandwichArray[sandwichArray.length -1]);	
+			return false;
 		}else{
-			//for loop counting up to length of array - 2 since last index is not needed.
-			//int i starts from 0 because of 0 base indexing.
-			for (int i = 0; i < sandwichArray.length-2; i++){
-				//add 1 to i since sandwichArray[0] is unneeded
-				System.out.print(sandwichArray[i+1]);
-			}
+			return true;	
 		}
+	}
+	
+	public static void giveIngredients (String [] sandwichArray){
+		if (sandwichArray.length <= 1
+				|| ingredients.indexOf("bread") == -1){
+				System.out.println("This is not a sandwich.");
+			}else if (ingredients.endsWith("bread") == true
+					&& ingredients.indexOf("bread") >= 0){
+				System.out.println(sandwichArray[sandwichArray.length -1]);	
+			}else{
+				//for loop counting up to length of array - 2 since last index is not needed.
+				//int i starts from 0 because of 0 base indexing.
+				for (int i = 0; i < sandwichArray.length-2; i++){
+					//add 1 to i since sandwichArray[0] is unneeded
+					System.out.print(sandwichArray[i+1]);
 	}
 }
 
